@@ -18,7 +18,17 @@ const audience = process.env.AUTH0_AUDIENCE;
 const isNetlify = process.env.NETLIFY || process.env.REACT_APP_NETLIFY;
 const routerBasePath = isNetlify ? '/.netlify/functions/api-server' : '/';
 console.log("IS NETLIFY", isNetlify)
-
+const checkJwt = jwt({
+    secret: jwksRsa.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: `${issuerBaseUrl}/.well-known/jwks.json`
+    }),
+    audience: audience,
+    issuer: `${issuerBaseUrl}/`,
+    algorithms: ['RS256']
+});
 
 if (!baseUrl || !issuerBaseUrl) {
     throw new Error('Please make sure that the file .env.local is in place and populated');
@@ -43,17 +53,7 @@ router.get('/api/shows', checkJwt, (req, res) => {
 
 
 app.use(routerBasePath, router);
-const checkJwt = jwt({
-    secret: jwksRsa.expressJwtSecret({
-        cache: true,
-        rateLimit: true,
-        jwksRequestsPerMinute: 5,
-        jwksUri: `${issuerBaseUrl}/.well-known/jwks.json`
-    }),
-    audience: audience,
-    issuer: `${issuerBaseUrl}/`,
-    algorithms: ['RS256']
-});
+
 
 
 if (isNetlify) {
