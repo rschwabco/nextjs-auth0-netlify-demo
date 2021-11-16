@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
+const bodyParser = require('body-parser');
 
 const app = express();
 const router = express.Router();
@@ -31,6 +32,8 @@ if (!audience) {
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors({ origin: baseUrl }));
+app.use(bodyParser.json());
+
 app.use(routerBasePath, router);
 const checkJwt = jwt({
     secret: jwksRsa.expressJwtSecret({
