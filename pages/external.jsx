@@ -13,7 +13,7 @@ function External() {
     setState(previous => ({ ...previous, isLoading: true }))
 
     try {
-      const response = await fetch('https://objective-mclean-c4ee52.netlify.app/.netlify/functions/api-server/api/shows');
+      const response = await fetch('/api/shows');
       const data = await response.json();
 
       setState(previous => ({ ...previous, response: data, error: undefined }))
