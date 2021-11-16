@@ -13,7 +13,7 @@ function External() {
     setState(previous => ({ ...previous, isLoading: true }))
 
     try {
-      const response = await fetch('/api/shows');
+      const response = await fetch('https://objective-mclean-c4ee52.netlify.app/.netlify/functions/api-server/api/shows');
       const data = await response.json();
 
       setState(previous => ({ ...previous, response: data, error: undefined }))
@@ -43,7 +43,7 @@ function External() {
           This will call a local API on port 3001 that would have been started if you run <code>npm run dev</code>.
           </p>
           <p>
-          An access token is sent as part of the request's <code>Authorization</code> header and the API will validate 
+          An access token is sent as part of the request's <code>Authorization</code> header and the API will validate
           it using the API's audience value. The audience is the identifier of the API that you want to call (see{" "}
           <a href="https://auth0.com/docs/get-started/dashboard/tenant-settings#api-authorization-settings">
             API Authorization Settings
