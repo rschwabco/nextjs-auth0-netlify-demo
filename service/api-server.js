@@ -34,6 +34,14 @@ app.use(helmet());
 app.use(cors({ origin: baseUrl }));
 app.use(bodyParser.json());
 
+router.get('/api/shows', checkJwt, (req, res) => {
+
+    res.send({
+        msg: 'Your access token was successfully validated!'
+    });
+});
+
+
 app.use(routerBasePath, router);
 const checkJwt = jwt({
     secret: jwksRsa.expressJwtSecret({
@@ -47,12 +55,6 @@ const checkJwt = jwt({
     algorithms: ['RS256']
 });
 
-app.get('/api/shows', checkJwt, (req, res) => {
-
-    res.send({
-        msg: 'Your access token was successfully validated!'
-    });
-});
 
 if (isNetlify) {
     const serverless = require("serverless-http");
