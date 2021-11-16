@@ -15,7 +15,7 @@ const issuerBaseUrl = process.env.AUTH0_ISSUER_BASE_URL;
 const audience = process.env.AUTH0_AUDIENCE;
 
 const isNetlify = process.env.NETLIFY || process.env.REACT_APP_NETLIFY;
-const routerBasePath = isNetlify ? '/.netlify/functions/api-server' : '/';
+const routerBasePath = isNetlify ? '/.netlify/functions/api-server/' : '/';
 
 
 if (!baseUrl || !issuerBaseUrl) {
