@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../.env.local' });
+require('dotenv').config({ path: './.env.local' });
 
 const express = require('express');
 const cors = require('cors');
@@ -57,4 +57,3 @@ if (isNetlify) {
     const server = app.listen(port, () => console.log(`API Server listening on port ${port}`));
     process.on('SIGINT', () => server.close());
 }
-
