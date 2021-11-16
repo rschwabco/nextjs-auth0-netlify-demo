@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"node api-server\"",
+    "dev": "concurrently \"next dev\" \"node service/api-server\"",
     "dev:api": "nodemon api-server",
     "build": "next build",
-    "start": "concurrently \"next start\" \"node api-server\"",
+    "start": "concurrently \"next start\" \"node service/api-server\"",
     "start:api": "node api-server",
     "test": "jest tests --coverage --maxWorkers=10",
     "test:watch": "jest --coverage --watch",
@@ -33,7 +33,8 @@
     "nodemon": "^2.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "reactstrap": "^8.8.1"
+    "reactstrap": "^8.8.1",
+    "serverless-http": "^2.7.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.0.0",
