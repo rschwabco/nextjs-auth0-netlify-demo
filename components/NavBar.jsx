@@ -52,6 +52,11 @@ const NavBar = () => {
                       External API
                     </PageLink>
                   </NavItem>
+                  <NavItem>
+                    <PageLink href="/displayState" className="nav-link" testId="navbar-external">
+                      Display State
+                    </PageLink>
+                  </NavItem>
                 </>
               )}
             </Nav>

@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@aserto/aserto-react@^0.1.52":
+  version "0.1.52"
+  resolved "https://registry.yarnpkg.com/@aserto/aserto-react/-/aserto-react-0.1.52.tgz#4489bb76c60b980bbc9f60b7f40a2be40391b32e"
+  integrity sha512-KuGEG8QEXSisK2YifAzd48Lxrl+bd6GOHk4s172ISdSxFdx8eYfjeRprLhJGzyXPOm4vtj68e+gJlLclJr6Iww==
+  dependencies:
+    "@aserto/aserto-spa-js" "^0.1.28"
+
+"@aserto/aserto-spa-js@^0.1.28":
+  version "0.1.28"
+  resolved "https://registry.yarnpkg.com/@aserto/aserto-spa-js/-/aserto-spa-js-0.1.28.tgz#748fb6846b05bf1bc20407d326b7eb26f7dfb2b7"
+  integrity sha512-1/dCpzlkdXaCI0ygDNLIx30VbQkeFJoZ8HIroB5x8wNXe3vL/a9e8qTkeRX1BVCJgDqIPmCDVwT8BsL0yyMxgA==
+
 "@auth0/nextjs-auth0@^1.2.0":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@auth0/nextjs-auth0/-/nextjs-auth0-1.6.1.tgz#9d187e75964c46e1cc9065fd01840de8a9f5a2ef"
@@ -2648,6 +2660,14 @@ expect@^27.3.1:
     jest-message-util "^27.3.1"
     jest-regex-util "^27.0.6"
 
+express-jwt-aserto@^1.0.73:
+  version "1.0.73"
+  resolved "https://registry.yarnpkg.com/express-jwt-aserto/-/express-jwt-aserto-1.0.73.tgz#f1338f1780f39547fb4c14ca13fcd4d0bf413d83"
+  integrity sha512-mAVHJFchjZtkGoZXunhNUWO4D1yZgHqjxswtefX+Yxi0+KRpO1qIjDvNtEeyTMhHdeG6gk0apQqVB6uJyvfTUQ==
+  dependencies:
+    axios "^0.21.1"
+    jwt-decode "^3.1.2"
+
 express-jwt@^6.0.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/express-jwt/-/express-jwt-6.1.0.tgz#5818c813e245b0eb361c5cf161425cf16f9c8591"
@@ -4205,6 +4225,11 @@ jws@^3.2.2:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
 
+jwt-decode@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
+  integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
+
 keyv@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-3.1.0.tgz#ecc228486f69991e49e9476485a5be1e8fc5c4d9"
@@ -5392,7 +5417,7 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-regenerator-runtime@^0.13.4:
+regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
   version "0.13.9"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
   integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==

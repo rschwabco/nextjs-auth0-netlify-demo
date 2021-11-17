@@ -1,5 +1,8 @@
 import React from 'react';
 import { UserProvider } from '@auth0/nextjs-auth0';
+import dynamic from 'next/dynamic'
+
+
 
 import Layout from '../components/Layout';
 
@@ -12,9 +15,11 @@ initFontAwesome();
 export default function App({ Component, pageProps }) {
   return (
     <UserProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+
     </UserProvider>
   );
 }
