@@ -54,7 +54,7 @@ app.use(helmet());
 app.use(cors({ origin: baseUrl }));
 app.use(bodyParser.json());
 // Set up middleware to return the display state map for this service
-app.use(displayStateMap(authzOptions));
+router.use(displayStateMap(authzOptions));
 
 //Aserto authorizer middleware function
 const checkAuthz = jwtAuthz(authzOptions)
